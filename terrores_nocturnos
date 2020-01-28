@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# 25 (34) Terrores_Nocturnos
+
+mkdir Terrores_Nocturnos
+cd Terrores_Nocturnos
+for j in {0..7}
+do
+    for k in {0..9}
+    do
+        let item=$j*10+$k
+        if [ $item -lt 62 ]
+        then
+            url="https://api.myl.cl/static/cards/34/0"$j$k".png"
+            wget $url --no-check-certificate
+        fi
+    done
+done
+cd ..

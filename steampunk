@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# 14 Steampunk
+
+mkdir Steampunk
+cd Steampunk
+for j in {0..7}
+do
+    for k in {0..9}
+    do
+        let item=$j*10+$k
+        if [ $item -lt 72 ]
+        then
+            url="https://api.myl.cl/static/cards/14/0"$j$k".png"
+            wget $url --no-check-certificate
+        fi
+    done
+done
+cd ..

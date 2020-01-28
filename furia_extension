@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# 02 Furia Extension
+
+mkdir Furia_Extension
+cd Furia_Extension
+for j in {0..9}
+do
+    for k in {0..9}
+    do
+        let item=$j*10+$k
+        if [ $item -lt 91 ]
+        then
+            url="https://api.myl.cl/static/cards/02/0"$j$k".png"
+            wget $url --no-check-certificate
+        fi
+    done
+done
+cd ..

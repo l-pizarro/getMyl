@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Promocionales_SP
+
+mkdir Promocionales_SP
+cd Promocionales_SP
+for i in {276..281}
+do
+    let centena=$i/100
+    let resto=$i-$centena*100
+    let decena=$resto/10
+    let unidad=$resto-$decena*10
+    url="https://api.myl.cl/static/cards/27/"$centena$decena$unidad".png"
+    wget $url --no-check-certificate
+done
+for i in {291..317}
+do
+    let centena=$i/100
+    let resto=$i-$centena*100
+    let decena=$resto/10
+    let unidad=$resto-$decena*10
+    url="https://api.myl.cl/static/cards/27/"$centena$decena$unidad".png"
+    wget $url --no-check-certificate
+done
+for i in {324..332}
+do
+    let centena=$i/100
+    let resto=$i-$centena*100
+    let decena=$resto/10
+    let unidad=$resto-$decena*10
+    url="https://api.myl.cl/static/cards/27/"$centena$decena$unidad".png"
+    wget $url --no-check-certificate
+done

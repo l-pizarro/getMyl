@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# 09 Bushido
+
+mkdir Bushido
+cd Bushido
+for i in {0..2}
+do
+    for j in {0..9}
+    do
+        for k in {0..9}
+        do
+            let item=$i*100+$j*10+$k
+            if [ $item -lt 247 ]
+            then
+                url="https://api.myl.cl/static/cards/09/"$i$j$k".png"
+                wget $url --no-check-certificate
+            fi
+        done
+    done
+done
+cd ..

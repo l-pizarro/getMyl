@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# 21 (30) Calavera
+
+mkdir Calavera
+cd Calavera
+for j in {0..9}
+do
+    for k in {0..9}
+    do
+        url="https://api.myl.cl/static/cards/30/0"$j$k".png"
+        wget $url --no-check-certificate
+    done
+done
+cd ..

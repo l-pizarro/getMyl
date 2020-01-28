@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# 19 Dharma
+
+mkdir Dharma
+cd Dharma
+for i in {0..2}
+do
+    for j in {0..9}
+    do
+        for k in {0..9}
+        do
+            let item=$i*100+$j*10+$k
+            if [ $item -lt 292 ]
+            then
+                url="https://api.myl.cl/static/cards/19/"$i$j$k".png"
+                wget $url --no-check-certificate
+            fi
+        done
+    done
+done
+cd ..
